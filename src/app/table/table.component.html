@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <h1>
+        學生成績表格
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="container">
+        <div class="table">
+          <div class="table-container">
+
+            <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> 名字 </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- Height Column -->
+              <ng-container matColumnDef="height">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> 身高 </th>
+                <td mat-cell *matCellDef="let element"> {{element.height}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> 體重 </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+          </div>
+          <!-- 分頁器 -->
+          <mat-paginator #paginator [length]="totalCount" [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 15]"
+            [showFirstLastButtons]="true">
+          </mat-paginator>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

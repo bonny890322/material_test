@@ -1,0 +1,15 @@
+//@import 'src/app/app.component.scss';
+
+mat-card {
+  margin: 10px;
+}
+
+mat-form-field {
+  margin: 10px;
+}
+
+mat-card {
+  .card-title {
+    color: rgb(97, 94, 94);
+  }
+}

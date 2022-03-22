@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FormComponent } from './form/form.component';
+import { TableComponent } from './table/table.component';
 
 //material
 import { MatSliderModule } from '@angular/material/slider';
@@ -37,7 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     TopBarComponent,
-    FormComponent
+    FormComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSelectModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: "login", component: FormComponent }
+      { path: "form", component: FormComponent },
+      { path: "table", component: TableComponent }
     ]),
   ],
   providers: [],
